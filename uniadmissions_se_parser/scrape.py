@@ -56,7 +56,7 @@ class Query:
         self.build()
     
     def build(self)->None:
-        self.__queryString=f'{self.__courseKeyword}{self.queryCourseType}{self.queryCourseStudyPace}{self.queryCourseLanguage}{self.queryCourseLevel}'
+        self.__queryString=f'{self.queryCourseKeyword}{self.queryCourseType}{self.queryCourseStudyPace}{self.queryCourseLanguage}{self.queryCourseLevel}'
     
     @property
     def get(self)->str:

@@ -1,4 +1,5 @@
 import csv
+import pandas as pd
 
 class Exporter:
     def __init__(self,courseList:list,exportFileName:str='output'):
@@ -15,3 +16,9 @@ class Exporter:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()  # Write the column headers
             writer.writerows(self.__courseList)  # Write the data rows
+
+    def toExcel(self)->None:
+         if not self.__courseList:
+              return
+         df = pd.DataFrame(self.__courseList)
+         df.to_excel(f'{self.__exportFileName}.xlsx',index=False)

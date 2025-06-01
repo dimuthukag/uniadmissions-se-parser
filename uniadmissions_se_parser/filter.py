@@ -60,11 +60,16 @@ class CourseLevel:
     
 class CourseStudyPace:
     def __init__(self):
+        self.__all=''
         self.__fullTime='&pace=full_time'
         self.__upTo75Percent='&pace=up_to_75'
         self.__upTo50Percent='&pace=up_to_50'
         self.__upTo25Percent='&pace=up_to_75'
 
+    @property
+    def all(self)->str:
+        return self.__all
+    
     @property
     def fullTime(self)->str:
         return self.__fullTime
